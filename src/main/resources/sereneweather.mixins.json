@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "pl.nadwey.sereneweather.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "refmap": "sereneweather.refmap.json",
+    "mixins": [
+        "client.AddLeavesColoringMixin"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
