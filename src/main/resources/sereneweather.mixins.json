@@ -5,7 +5,7 @@
     "compatibilityLevel": "JAVA_8",
     "refmap": "sereneweather.refmap.json",
     "mixins": [
-        "client.AddLeavesColoringMixin"
+
     ],
     "client": [
     ],
