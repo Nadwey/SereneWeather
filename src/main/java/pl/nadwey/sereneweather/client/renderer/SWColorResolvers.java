@@ -13,12 +13,20 @@ import pl.nadwey.sereneweather.util.Color;
 public class SWColorResolvers {
     @SubscribeEvent
     public static void setupClient(FMLClientSetupEvent event) {
-        ColorResolver old = BiomeColors.FOLIAGE_COLOR_RESOLVER;
+        ColorResolver oldFoliageColorResolver = BiomeColors.FOLIAGE_COLOR_RESOLVER;
 
         BiomeColors.FOLIAGE_COLOR_RESOLVER = (biome, x, z) -> {
-            int oldColor = old.getColor(biome, x, z);
+            int oldColor = oldFoliageColorResolver.getColor(biome, x, z);
 
-            return new Color(oldColor).interpolate(new Color(255, 255, 255), 0.8f).toARGB();
+            return new Color(oldColor).interpolate(new Color(255, 255, 255), 1.0f).toARGB();
+        };
+
+        ColorResolver oldGrassColorResolver = BiomeColors.GRASS_COLOR_RESOLVER;
+
+        BiomeColors.GRASS_COLOR_RESOLVER = (biome, x, z) -> {
+            int oldColor = oldGrassColorResolver.getColor(biome, x, z);
+
+            return new Color(oldColor).interpolate(new Color(255, 255, 255), 1.0f).toARGB();
         };
     }
 }

@@ -16,6 +16,6 @@ public class AddLeavesColoringMixin {
     private static void createDefault(CallbackInfoReturnable<BlockColors> cir, BlockColors blockColors) {
         blockColors.register((blockstate, blockandtintgetter, blockpos, i) -> {
             return blockandtintgetter != null && blockpos != null ? BiomeColors.getAverageFoliageColor(blockandtintgetter, blockpos) : FoliageColor.getDefaultColor();
-        }, Blocks.BIRCH_LEAVES);
+        }, Blocks.BIRCH_LEAVES, Blocks.SPRUCE_LEAVES);
     }
 }
